@@ -52,4 +52,31 @@ export class RequestUtils {
         });
         requestCaller(request);
     }
+
+    put = async (url: string, body: any, headers?: any) => {
+        const request = new Request(`${this.baseUrl}${url}`, {
+            headers: this.makeHeader(headers),
+            body,
+            method: "PUT"
+        });
+        requestCaller(request);
+    }
+
+    patch = async (url: string, body: any, headers?: any) => {
+        const request = new Request(`${this.baseUrl}${url}`, {
+            headers: this.makeHeader(headers),
+            body,
+            method: "PATCH"
+        });
+        requestCaller(request);
+    }
+
+    delete = async (url: string, body: any, headers?: any) => {
+        const request = new Request(`${this.baseUrl}${url}`, {
+            headers: this.makeHeader(headers),
+            body,
+            method: "DELETE"
+        });
+        requestCaller(request);
+    }
 }
