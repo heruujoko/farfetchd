@@ -1,6 +1,7 @@
 const requestCaller = (req: Request): Promise<any> => {
     return fetch(req)
         .then(async resp => {
+            console.log(`RR: ${JSON.stringify(resp)}`);
             if (resp.status === 200 || resp.status === 201) {
                 try {
                     const json = await resp.json();
